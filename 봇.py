@@ -3,9 +3,6 @@ import os
 
 client = discord.Client()
 
-access_token = os.environ["BOT_TOKEN"]
-token = (access_token)
-
 @client.event
 async def on_ready():
     print("다음으로 로그인합니다")
@@ -23,5 +20,6 @@ async def on_message(message):
     if message.content.startswith('!안녕'):
         channel = message.channel
         await channel.send('반가워!')
-
-client.run(token)
+        
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
