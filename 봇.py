@@ -16,8 +16,8 @@ async def on_message(message):
     if message.author.bot:
         return None
 
-    if message.content.startswith('안녕'):
+    if message.content.startswith('알파야'):
         channel = message.channel
-        await channel.send('반가워!')
+        await channel.send('ㅇ?')
         
 client.run(access_token)
