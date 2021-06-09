@@ -22,7 +22,7 @@ async def on_message(message):
         channel = message.channel
         await channel.send('ㅇ?')
 
-    if message.content.startswith('현재 시간'):
+    if message.content.startswith('!현재 시간'):
         now = datetime.datetime.now()
         시간 = str(now.hour+9)
         if 시간 >= 24 :
