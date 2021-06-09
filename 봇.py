@@ -27,7 +27,7 @@ async def on_message(message):
         시간 = str(now.hour+9)
         if 시간 >= 24 :
              시간 = 시간 - 24
-        time = f"{str(now.year)}년 {str(now.month)}월 {str(now.day)}일 {str(now.hour+9)}시 {str(now.minute)}분"
+        time = f"{str(now.year)}년 {str(now.month)}월 {str(now.day)}일 {시간}시 {str(now.minute)}분"
         channel = message.channel
         await channel.send(time)
         
