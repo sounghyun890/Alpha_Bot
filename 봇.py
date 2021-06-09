@@ -23,8 +23,8 @@ async def on_message(message):
         channel = message.channel
         await channel.send('ㅇ?')
 
-    if message.content.startswith('알파야 현재 시간'):
+    if message.content.startswith('현재 시간'):
         channel = message.channel
-        await channel.send("time")
+        await channel.send(time)
         
 client.run(access_token)
