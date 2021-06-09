@@ -1,6 +1,6 @@
 import discord
 import os
-import datetime
+import datetime kst
 
 client = discord.Client()
 access_token = os.environ["BOT_TOKEN"]
