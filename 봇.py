@@ -1,4 +1,3 @@
-import asyncio
 import discord
 
 client = discord.Client()
