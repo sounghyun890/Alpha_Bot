@@ -45,18 +45,12 @@ async def on_message(message):
         await channel.send(embed=discord.Embed(title="현재 시간", timestamp=datetime.datetime.utcnow()))
         
     if message.content.startswith('알파야 고양이'):
-        embed = discord.Embed(
-            title='고양이는',
-            description='멍멍',
-            colour=discord.Colour.green()
-        )
+        channel = message.channel
+        await channel.send('야옹~')
         
     if message.content.startswith('알파야 강아지'):
-        embed = discord.Embed(
-            title='강아지는',
-            description='야옹야옹',
-            colour=discord.Colour.green()
-        )
+        channel = message.channel
+        await channel.send('멍멍!')
 
     if a>=5 :
         channel = message.channel
