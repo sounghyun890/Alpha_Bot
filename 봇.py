@@ -29,6 +29,9 @@ async def on_message_delete(message):#메세지가 삭제 되면
 async def on_message(message):
     if message.author.bot:
         return None
+
+    message_content = message.content
+
     a = message_content.find("알파야")
     a = a - message_content.find("알파야 자폭해")
     a = a - message_content.find("알파야 뭐해")
