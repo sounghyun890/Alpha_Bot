@@ -25,7 +25,8 @@ async def on_message(message):
         channel = message.channel
         await channel.send('ㅇ?')
         
-        if(message.content == "!현재 시간"):
-        await message.channel.send(embed=discord.Embed(title="현재 시간", timestamp=datetime.datetime.utcnow()))
+    if message.content.startswith('!현재 시간'):
+        channel = message.channel
+        await channel.send(embed=discord.Embed(title="현재 시간", timestamp=datetime.datetime.utcnow()))
         
 client.run(access_token)
