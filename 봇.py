@@ -51,7 +51,7 @@ async def on_message(message):
         channel = message.channel
         await channel.send(embed=discord.Embed(title="현재 시간", timestamp=datetime.datetime.utcnow()))
 
-    if a>=4 :
+    if a>=3 :
         channel = message.channel
         await channel.send('네?')
 
