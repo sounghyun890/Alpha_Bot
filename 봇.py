@@ -15,7 +15,7 @@ async def on_ready():
     @client.event
 async def on_ready():
     await client.change_presence(status=discord.Status.offline)
-    game = discord.Game("")
+    game = discord.Game("...")
     await client.change_presence(status=discord.Status.online, activity=game)
     while True:
         game = discord.Game("서버관리")
