@@ -3,7 +3,6 @@ import asyncio
 import random
 from discord import Member
 from discord.ext import commands
-import youtube_dl
 from urllib.request import urlopen, Request
 import urllib
 import urllib.request
