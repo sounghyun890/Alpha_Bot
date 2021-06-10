@@ -36,6 +36,10 @@ async def on_message(message):
         await asyncio.sleep(3)
         await channel.send('자폭 할 수 있는 권한이 없어요')
         
+    if message.content.startswith('알파야 사랑해'):
+        channel = message.channel
+        await channel.send('')
+        
     if message.content.startswith('알파야 안녕'):
         channel = message.channel
         await channel.send('안녕하세요!')
