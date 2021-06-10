@@ -36,10 +36,6 @@ async def on_message(message):
         await asyncio.sleep(3)
         await channel.send('자폭 할 수 있는 권한이 없어요')
     
-    elif message.content.startswith('알피야','아파야','앙파야','알차야):
-        channel = message.channel
-        await channel.send('그게 누구죠?')
-        
     elif message.content.startswith('알파야 사랑해'):
         channel = message.channel
         await channel.send('')
@@ -52,12 +48,12 @@ async def on_message(message):
         channel = message.channel
         await channel.send('당신 메세지를 읽고 있습니다')
         
-    elif message.content.startswith('!현재 시간'):
+    elif message.content.startswith('현재 시간'):
         channel = message.channel
         await channel.send(embed=discord.Embed(title="현재 시간", timestamp=datetime.datetime.utcnow()))
         
     elif message.content.startswith('알파야'):
         channel = message.channel
-        await channel.send('ㅇ?')
+        await channel.send('네?')
         
 client.run(access_token)
