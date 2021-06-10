@@ -11,6 +11,7 @@ import sys
 import json
 import time
 import datetime
+import bs4
 
 client = discord.Client()
 access_token = os.environ["BOT_TOKEN"]
@@ -36,15 +37,6 @@ async def on_message_delete(message):#메세지가 삭제 되면
     
 @client.event
 async def on_message(message):
-    if message.author.bot:
-        return None
-    if message.content.startswith('알파야 자폭해'):
-        channel = message.channel
-        await channel.send('10초 후에 자폭합니다')
-        await asyncio.sleep(3)
-        await channel.send('자폭 할 수 있는 권한이 없어요')
-        
-        
     if message.content.startswith("알파야 날씨"):
         learn = message.content.split(" ")
         location = learn[1]
