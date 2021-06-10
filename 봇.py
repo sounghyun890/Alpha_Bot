@@ -8,7 +8,7 @@ import youtube_dl
 from urllib.request import urlopen, Request
 import urllib
 import urllib.request
-import bs4
+from bs4 import BeautifulSoup
 import os
 import sys
 import json
