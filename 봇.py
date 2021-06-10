@@ -1,8 +1,6 @@
 import discord
 import asyncio
 import random
-from openpyxl import Workbook
-from openpyxl.utils import get_column_letter
 from tkinter import filedialog
 from discord import Member
 from discord.ext import commands
