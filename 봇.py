@@ -6,7 +6,6 @@ from discord.ext import commands
 from urllib.request import urlopen, Request
 import urllib
 import urllib.request
-import bs4
 import os
 import sys
 import json
