@@ -20,13 +20,23 @@ async def on_ready():
 async def on_message(message):
     if message.author.bot:
         return None
-
-    if message.content.startswith('알파야'):
+    if message.content.startswith('알파야 자폭해'):
         channel = message.channel
-        await channel.send('ㅇ?')
+        await channel.send('10초 후에 자폭합니다')
+        await asyncio.sleep(3)
+        await channel.send('자폭 할 수 있는 권한이 없어요')
+        
+        
+    if message.content.startswith('알파야 뭐해'):
+        channel = message.channel
+        await channel.send('당신 생각이요')
         
     if message.content.startswith('!현재 시간'):
         channel = message.channel
         await channel.send(embed=discord.Embed(title="현재 시간", timestamp=datetime.datetime.utcnow()))
+        
+    if message.content.startswith('알파야'):
+        channel = message.channel
+        await channel.send('ㅇ?')
         
 client.run(access_token)
