@@ -30,15 +30,11 @@ async def on_message(message):
     if message.author.bot:
         return None
     if message.content.startswith('알파야 자폭해'):
+    elif message.content.startswith('알파야 자폭해'):
         channel = message.channel
         await channel.send('10초 후에 자폭합니다')
         await asyncio.sleep(3)
         await channel.send('자폭 할 수 있는 권한이 없어요')
-
-    if message.content.startswith('알파야 안녕'):
-    elif message.content.startswith('알파야 안녕'):
-        channel = message.channel
-        await channel.send('안녕하세요!')
 
     if message.content.startswith('알파야 뭐해'):
     elif message.content.startswith('알파야 뭐해'):
