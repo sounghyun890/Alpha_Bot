@@ -2,6 +2,18 @@ import discord
 import asyncio
 import os
 import datetime
+import random
+import openpyxl
+from discord import Member
+from discord.ext import commands
+from urllib.request import urlopen, Request
+import urllib
+import urllib.request
+import bs4
+import sys
+import json
+from selenium import webdriver
+import time
 
 client = discord.Client()
 access_token = os.environ["BOT_TOKEN"]
@@ -36,7 +48,7 @@ async def on_message(message):
         await channel.send('자폭 할 수 있는 권한이 없어요')
         
         
-    if message.content.startswith("알파야 날씨"):
+    if message.content.startswith("!날씨"):
         learn = message.content.split(" ")
         location = learn[1]
         enc_location = urllib.parse.quote(location+'날씨')
@@ -112,7 +124,9 @@ async def on_message(message):
         embed.add_field(name='내일 오전날씨상태, 미세먼지 상태', value=tomorrowValue, inline=False)  # 내일오전 날씨상태
         embed.add_field(name='내일 오후온도', value=tomorrowAfterTemp + '˚', inline=False)  # 내일오후날씨
         embed.add_field(name='내일 오후날씨상태, 미세먼지 상태', value=tomorrowAfterValue, inline=False)  # 내일오후 날씨상태
-        
+
+
+
         await client.send_message(message.channel,embed=embed)
     
     elif message.content.startswith('알파야 사랑해'):
