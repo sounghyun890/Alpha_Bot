@@ -29,6 +29,10 @@ async def on_message_delete(message):#메세지가 삭제 되면
 async def on_message(message):
     if message.author.bot:
         return None
+    a = message_content.find("알파야")
+    a = a - message_content.find("알파야 자폭해")
+    a = a - message_content.find("알파야 뭐해")
+    a = a - message_content.find("알파야 시간")
     
     if message.content.startswith('알파야 자폭해'):
         channel = message.channel
@@ -46,7 +50,7 @@ async def on_message(message):
         channel = message.channel
         await channel.send(embed=discord.Embed(title="현재 시간", timestamp=datetime.datetime.utcnow()))
 
-    if message.content.startswith('알파야'):
+    if a>=4 :
         elif message.content.startswith('알파야'):
         channel = message.channel
         await channel.send('네?')
