@@ -37,14 +37,17 @@ async def on_message(message):
         await channel.send('자폭 할 수 있는 권한이 없어요')
 
     if message.content.startswith('알파야 뭐해'):
+        elif message.content.startswith('알파야 뭐해'):
         channel = message.channel
         await channel.send('당신 메세지를 읽고 있습니다')
 
     if message.content.startswith('알파야 시간'):
+        elif message.content.startswith('알파야 시간'):
         channel = message.channel
         await channel.send(embed=discord.Embed(title="현재 시간", timestamp=datetime.datetime.utcnow()))
 
     if message.content.startswith('알파야'):
+        elif message.content.startswith('알파야'):
         channel = message.channel
         await channel.send('네?')
 
