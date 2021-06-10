@@ -49,7 +49,7 @@ async def on_message(message):
         await channel.send('자폭 할 수 있는 권한이 없어요')
         
         
-    if message.content.startswith("!날씨"):
+    if message.content.startswith("알파야 날씨"):
         learn = message.content.split(" ")
         location = learn[1]
         enc_location = urllib.parse.quote(location+'날씨')
