@@ -12,16 +12,20 @@ async def on_ready():
     print(client.user.id)
     await client.change_presence(game=discord.Game(name='', type=1))
     
-    @client.event
+@client.event
 async def on_ready():
+    print("login")
+    print(client.user.name)
+    print(client.user.id)
+    await client.change_presence(game=discord.Game(name='', type=1))
     await client.change_presence(status=discord.Status.offline)
-    game = discord.Game("...")
+    game = discord.Game("시작중...")
     await client.change_presence(status=discord.Status.online, activity=game)
     while True:
         game = discord.Game("서버관리")
         await client.change_presence(status=discord.Status.online, activity=game)
         await asyncio.sleep(2)
-
+        
 @client.event
 async def on_message(message):
     if message.author.bot:
