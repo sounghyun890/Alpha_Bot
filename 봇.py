@@ -17,15 +17,6 @@ async def on_ready():
         await asyncio.sleep(2)
         
 @client.event
-async def on_message_delete(message):#메세지가 삭제 되면
-    if message.author.bot:return
-    channel = client.get_channel(849536197273059338)
-    embed = discord.Embed(title=f"삭제됨", description=f"유저 : {message.author.display_name} \n유저ID : {message.author} \n서버 : {message.guild.name} \n채널 : {message.channel.mention}", color=0xFF0000)
-    embed.add_field(name="삭제된 내용", value=f"내용 : {message.content}", inline=False)
-    embed.set_footer(text=f"알파봇 | {time}")
-    await channel.send(embed=embed)
-        
-@client.event
 async def on_message(message):
     if message.author.bot:
         return None
