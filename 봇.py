@@ -9,7 +9,6 @@ import urllib.request
 import os
 import sys
 import json
-from selenium import webdriver
 import time
 import datetime
 
