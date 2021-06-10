@@ -38,7 +38,7 @@ async def on_message(message):
     
     elif message.content.startswith('알파야 사랑해'):
         channel = message.channel
-        await channel.send('')
+        await channel.send('.')
         
     elif message.content.startswith('알파야 안녕'):
         channel = message.channel
