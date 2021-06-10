@@ -19,7 +19,7 @@ async def on_ready():
 @client.event
 async def on_message_delete(message):#메세지가 삭제 되면
     if message.author.bot:return
-    channel = client.get_channel(849536197273059338)
+    channel = client.get_channel(852409018454245397)
     embed = discord.Embed(title=f"삭제됨", description=f"유저 : {message.author.display_name} \n유저ID : {message.author} \n서버 : {message.guild.name} \n채널 : {message.channel.mention}", color=0xFF0000)
     embed.add_field(name="삭제된 내용", value=f"내용 : {message.content}", inline=False)
     embed.set_footer(text=f"알파봇 | {time}")
@@ -48,9 +48,9 @@ async def on_message(message):
         channel = message.channel
         await channel.send('당신 메세지를 읽고 있습니다')
         
-    elif message.content.startswith('현재 시간'):
+    elif message.content.startswith('현재시간'):
         channel = message.channel
-        await channel.send(embed=discord.Embed(title="현재 시간", timestamp=datetime.datetime.utcnow()))
+        await channel.send(embed=discord.Embed(title="현재시간", timestamp=datetime.datetime.utcnow()))
         
     elif message.content.startswith('알파야'):
         channel = message.channel
