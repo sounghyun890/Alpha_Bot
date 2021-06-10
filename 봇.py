@@ -1,4 +1,5 @@
 import discord
+import asyncio
 import os
 import datetime
 
@@ -7,15 +8,18 @@ access_token = os.environ["BOT_TOKEN"]
 
 @client.event
 async def on_ready():
-    print("login")
-    print(client.user.name)
-    print(client.user.id)
     await client.change_presence(status=discord.Status.offline)
-    game = discord.Game("서버관리")
+    game = discord.Game("시작하는 중...")
     await client.change_presence(status=discord.Status.online, activity=game)
     while True:
+        game = discord.Game("서버 관리")#상태 메세지
+        await client.change_presence(status=discord.Status.online, activity=game)
+        await asyncio.sleep(2)
         
-        async def on_message(message):
+        
+        
+@client.event
+async def on_message(message):
     if message.author.bot:
         return None
 
