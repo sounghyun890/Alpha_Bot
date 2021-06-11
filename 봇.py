@@ -2,9 +2,6 @@ import discord
 import asyncio
 import os
 import datetime
-from ButtonPaginator import Paginator
-from discord.ext.commands import Bot
-from discord_components import DiscordComponents
 
 client = discord.Client()
 access_token = os.environ["BOT_TOKEN"]
@@ -60,18 +57,4 @@ async def on_message(message):
         channel = message.channel
         await channel.send('네?')
         
-@bot.event
-async def on_ready():
-    DiscordComponents(bot)
-    print(f"Logged in as {bot.user}!")
-
-@bot.command()
-async def button(ctx):
-    embeds = [discord.Embed(title="1 page"), discord.Embed(title="2 page"), discord.Embed(title="3 page"), discord.Embed(title="4 page"), discord.Embed(title="5 page")]
-    e = Paginator(bot=bot,
-                  ctx=ctx,
-                  embeds=embeds,
-                  only=ctx.author)
-    await e.start()
-
 client.run(access_token)
