@@ -5,10 +5,10 @@ import datetime
 from ButtonPaginator import Paginator
 from discord.ext.commands import Bot
 from discord_components import DiscordComponents
-import discord
 
 client = discord.Client()
 access_token = os.environ["BOT_TOKEN"]
+bot = Bot("your prefix")
 
 @client.event
 async def on_ready():
@@ -59,6 +59,7 @@ async def on_message(message):
     if a>=5 :
         channel = message.channel
         await channel.send('네?')
+        
 @bot.event
 async def on_ready():
     DiscordComponents(bot)
