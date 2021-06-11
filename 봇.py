@@ -5,7 +5,6 @@ import datetime
 
 client = discord.Client()
 access_token = os.environ["BOT_TOKEN"]
-bot = Bot("your prefix")
 
 @client.event
 async def on_ready():
