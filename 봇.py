@@ -16,10 +16,13 @@ async def on_ready():
         await client.change_presence(status=discord.Status.online, activity=game)
         await asyncio.sleep(2)
         
+
 @client.event
+b = random.randrange(0.1,2.5)
 async def on_message(message):
     if message.author.bot:
         return None
+    await asyncio.sleep(b)
 
     message_content = message.content
 
@@ -30,6 +33,7 @@ async def on_message(message):
     a = a - message_content.find("알파야 고양이")
     a = a - message_content.find("알파야 강아지")
     a = a - message_content.find("알파야 일하자")
+    a = a - message_content.find("알파야 놀자")
     
     if message.content.startswith('알파야 자폭해'):
         channel = message.channel
@@ -57,7 +61,11 @@ async def on_message(message):
         channel = message.channel
         await channel.send('노동중...')
 
-    if a>=6 :
+    if message.content.startswith('알파야 놀자'):
+        channel = message.channel
+        await channel.send('뭐하고 놀까요')
+
+    if a>=7 :
         channel = message.channel
         await channel.send('네?')
         
