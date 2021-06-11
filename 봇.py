@@ -33,8 +33,8 @@ async def on_message(message):
     a = a - message_content.find("알파야 일하자")
     a = a - message_content.find("알파야 놀자")
 
-    b = random.randrange(0.1,2.5,0.1)
-    await asyncio.sleep(b)
+    b = random.randrange(1,25)
+    await asyncio.sleep(b÷10)
     
     if message.content.startswith('알파야 자폭해'):
         channel = message.channel
