@@ -29,6 +29,7 @@ async def on_message(message):
     a = a - message_content.find("알파야 시간")
     a = a - message_content.find("알파야 고양이")
     a = a - message_content.find("알파야 강아지")
+    a = a - message_content.find("알파야 일하자")
     
     if message.content.startswith('알파야 자폭해'):
         channel = message.channel
@@ -51,8 +52,12 @@ async def on_message(message):
     if message.content.startswith('알파야 강아지'):
         channel = message.channel
         await channel.send('멍멍!')
+        
+    if message.content.startswith('알파야 일하자'):
+        channel = message.channel
+        await channel.send('노동중...')
 
-    if a>=5 :
+    if a>=6 :
         channel = message.channel
         await channel.send('네?')
         
