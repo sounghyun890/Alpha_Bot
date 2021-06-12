@@ -2,8 +2,7 @@ import discord
 import asyncio
 import os
 import datetime
-import json
-import requests
+
 
 client = discord.Client()
 access_token = os.environ["BOT_TOKEN"]
@@ -33,9 +32,6 @@ async def on_message(message):
     a = a - message_content.find("알파야 강아지")
     a = a - message_content.find("알파야 일하자")
     a = a - message_content.find("알파야 놀자")
-
-    b = random.randrange(1,25)
-    await asyncio.sleep(b÷10)
     
     if message.content.startswith('알파야 자폭해'):
         channel = message.channel
@@ -75,7 +71,7 @@ async def on_message(message):
 async def on_message(message):
     severid = get.sevrer.id
     
-    if message.content.startswith("/금지어 "):
+    if message.content.swith("/금지어 "):
         UserName = message.content.replace("/금지어 ", "")
     
     if message.author.bot:
