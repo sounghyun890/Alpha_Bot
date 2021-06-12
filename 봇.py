@@ -64,7 +64,7 @@ async def on_message(message):
 
     if message.content.startswith('알파야 놀자'):
         channel = message.channel
-        await channel.send('뭐하고 놀까요')
+        await channel.send('뭐하고 놀까요?')
 
     if a>=7 :
         channel = message.channel
