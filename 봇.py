@@ -2,6 +2,8 @@ import discord
 import asyncio
 import os
 import datetime
+import json
+import requests
 
 client = discord.Client()
 access_token = os.environ["BOT_TOKEN"]
@@ -23,7 +25,6 @@ async def on_message(message):
         return None
 
     message_content = message.content
-
     a = message_content.find("알파야")
     a = a - message_content.find("알파야 자폭해")
     a = a - message_content.find("알파야 뭐해")
@@ -70,4 +71,25 @@ async def on_message(message):
         channel = message.channel
         await channel.send('네?')
         
+@client.event
+async def on_message(message):
+    severid = get.sevrer.id
+    
+    if message.content.startswith("/금지어 "):
+        UserName = message.content.replace("/금지어 ", "")
+    
+    if message.author.bot:
+        await message.author.send(embed = embed) # message.channel.send를 message.author.send로
+        message_content = message.content
+  
+    
+    {severid} = message_content.find("")#초성 욕설
+    
+    if severid>= 0 :
+        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 언어 포함]")
+        await message.delete() 
+        await asyncio.sleep(7)
+        await a.delete()
+    await bot.process_commands(messsage)
+    
 client.run(access_token)
