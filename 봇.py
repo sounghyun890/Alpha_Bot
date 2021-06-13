@@ -1,6 +1,7 @@
 import asyncio
 import discord,os
 import datetime
+import random
 
 client = discord.Client()
 access_token = os.environ["BOT_TOKEN"]
@@ -231,5 +232,23 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     #섹드립 bad3 20개
     #외국어 욕설 bad4 11개
     #비하발언 bad5 3개
+@client.event  
+async def on_message(message):
+     if message.content.startswith('!주사위'):
+
+        randomNum = random.randrange(1, 7) # 1~6까지 랜덤수
+        print(randomNum)
+        if randomNum == 1:
+            await client.send_message(message.channel, embed=discord.Embed(description=':game_die: '+ ':one:'))
+        if randomNum == 2:
+            await client.send_message(message.channel, embed=discord.Embed(description=':game_die: ' + ':two:'))
+        if randomNum ==3:
+            await client.send_message(message.channel, embed=discord.Embed(description=':game_die: ' + ':three:'))
+        if randomNum ==4:
+            await client.send_message(message.channel, embed=discord.Embed(description=':game_die: ' + ':four:'))
+        if randomNum ==5:
+            await client.send_message(message.channel, embed=discord.Embed(description=':game_die: ' + ':five:'))
+        if randomNum ==6:
+            await client.send_message(message.channel, embed=discord.Embed(description=':game_die: ' + ':six: '))
     
 client.run(access_token)
