@@ -23,6 +23,10 @@ async def on_message(message):
     if message.author.bot:
         return None
 
+    # a = a - message_content.find("알파야 ㅇㅇ")
+    # 질문 추가시 위 형식으로 밑에 추가후
+    # if a>=X : <--- X자리에 숫자 추가한 질문수만큼 숫자 늘리기
+    
     message_content = message.content
     a = message_content.find("알파야")
     a = a - message_content.find("알파야 자폭해")
