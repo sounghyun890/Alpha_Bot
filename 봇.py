@@ -80,112 +80,158 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
         await message.author.send(embed = embed) # message.channel.send를 message.author.send로
     message_content = message.content
     
-    bad = message_content.find("ㅅㅂ")#초성 욕설
-    bad = bad + message_content.find("ㅂㅅ")#초성 욕설
-    bad = bad + message_content.find("ㅄ")#초성 욕설
-    bad = bad + message_content.find("ㅈㄴ")#초성 욕설
-    bad = bad + message_content.find("ㅈㄹ")#초성 욕설
-    bad = bad + message_content.find("ㅈㄹㄴ")#초성 욕설
-    bad = bad + message_content.find("ㅅ1ㅂ")#35#초성 욕설
-    bad = bad + message_content.find("ㅅ ㅂ")#47#초성 욕설
-    bad = bad + message_content.find("ㄷㅊ")#초성 욕설
-    bad = bad + message_content.find("ㅗ")#초성 욕설
-    bad = bad + message_content.find("ㄷ ㅊ")#51#초성 욕설
-    bad = bad + message_content.find("ㄲㅈ")#초성 욕설
-    bad = bad + message_content.find("ㅗ")#초성 욕설
-    bad = bad + message_content.find("씨발")#욕설
-    bad = bad + message_content.find("닥쳐")#욕설
-    bad = bad + message_content.find("꺼져")#욕설
-    bad = bad + message_content.find("지랄")#욕설
-    bad = bad + message_content.find("시발")#욕설
-    bad = bad + message_content.find("쌔끼")#욕설
-    bad = bad + message_content.find("병신")#욕설
-    bad = bad + message_content.find("샤발")#욕설
-    bad = bad + message_content.find("씨 발")#욕설
-    bad = bad + message_content.find("닥ㅊ")#욕설
-    bad = bad + message_content.find("병 신")#욕설
-    bad = bad + message_content.find("*발")#욕설
-    bad = bad + message_content.find("*신")#욕설
-    bad = bad + message_content.find("야발")#욕설
-    bad = bad + message_content.find("새끼")#욕설
-    bad = bad + message_content.find("빠큐")#욕설
-    bad = bad + message_content.find("븅신")#욕설
-    bad = bad + message_content.find("미친")#욕설
-    bad = bad + message_content.find("시놈발")#욕설
-    bad = bad + message_content.find("시이발")#욕설
-    bad = bad + message_content.find("개세끼")#욕설
-    bad = bad + message_content.find("게세끼")#욕설
-    bad = bad + message_content.find("TLQKF")#영어 욕설
-    bad = bad + message_content.find("ㅈ랄")#욕설
-    bad = bad + message_content.find("씌발")#폐드립
-    bad = bad + message_content.find("씹발")#욕설
-    bad = bad + message_content.find("씌발")#욕설
-    bad = bad + message_content.find("씹창")#욕설
-    bad = bad + message_content.find("시이이벌")#욕설
-    bad = bad + message_content.find("뒤져")#욕설
-    bad = bad + message_content.find("존나")#욕설
-    bad = bad + message_content.find("싯팔")#80#욕설
-    bad = bad + message_content.find("ㅣ발")#욕설
-    bad = bad - message_content.find("시발점")#-
-    bad = bad - message_content.find("ㅗㅜㅑ")#-
-    
-    bad = bad + message_content.find("ㄴㄱㅁ")#초성 폐드립
-    bad = bad + message_content.find("느금마")#폐드립
-    bad = bad + message_content.find("니 엄마")#폐드립
-    bad = bad + message_content.find("느그 어머니")#폐드립
-    bad = bad + message_content.find("싸발")#폐드립
-    bad = bad + message_content.find("폐륜")
-    bad = bad + message_content.find("느그어미")#폐드립
-    
-    bad = bad + message_content.find("좇")#섹드립
-    bad = bad + message_content.find("좆")#섹드립
-    bad = bad + message_content.find("섹스")#섹드립
-    bad = bad + message_content.find("보지")#섹드립
-    bad = bad + message_content.find("섹 스")#섹드립
-    bad = bad + message_content.find("조까")#섹드립
-    bad = bad + message_content.find("porn")#섹드립
-    bad = bad + message_content.find("자지")#섹드립
-    bad = bad + message_content.find("불알")#섹드립
-    bad = bad + message_content.find("ㅈ같")#섹드립
-    bad = bad + message_content.find("기모찌")#섹드립
-    bad = bad + message_content.find("자위")#섹드립
-    bad = bad + message_content.find("딸딸이")#섹드립
-    bad = bad + message_content.find("SEX")#섹드립
-    bad = bad + message_content.find("Sex")#섹드립
-    bad = bad + message_content.find("섹슥")#섹드립
-    bad = bad + message_content.find("포르노")#섹드립
-    bad = bad - message_content.find("자위대")#64#-
-    bad = bad - message_content.find("자지말")#68#-
-    bad = bad - message_content.find("자지마")#50#-
-    bad = bad - message_content.find("보지마")#-
-    
-    bad = bad + message_content.find("fuck")#외국어 욕설
-    bad = bad + message_content.find("Tlqkf")#영어 욕설
-    bad = bad + message_content.find("tlqkf")#영어 욕설
-    bad = bad + message_content.find("쉣")#영어 욕설
-    bad = bad + message_content.find("퍽큐")#영어 욕설
-    bad = bad + message_content.find("FUCK")#영어 욕설
-    bad = bad + message_content.find("Fuck")#영어 욕설
-    bad = bad + message_content.find("sibar")#영어 욕설
-    bad = bad + message_content.find("Sibar")#영어 욕설
-    bad = bad + message_content.find("SIBAR")#영어 욕설
-    bad = bad + message_content.find("ファック")#외국어 욕
-    bad = bad + message_content.find("他妈的")#외국어 욕
-    
-    bad = bad + message_content.find("따까리")#비하 발언
-    bad = bad + message_content.find("찐따")#비하
-    bad = bad + message_content.find("미친놈")#비하
-    bad = bad + message_content.find("싸가지")#비하
-    
+    #초성 욕설
+    bad = message_content.find("ㅅㅂ")
+    bad = bad + message_content.find("ㅂㅅ")
+    bad = bad + message_content.find("ㅄ")
+    bad = bad + message_content.find("ㅈㄴ")
+    bad = bad + message_content.find("ㅈㄹ")
+    bad = bad + message_content.find("ㅈㄹㄴ")
+    bad = bad + message_content.find("ㅅ1ㅂ")
+    bad = bad + message_content.find("ㅅ ㅂ")
+    bad = bad + message_content.find("ㄷㅊ")
+    bad = bad + message_content.find("ㅗ")
+    bad = bad + message_content.find("ㄷ ㅊ")
+    bad = bad + message_content.find("ㄲㅈ")
+    bad = bad + message_content.find("ㅗ")
 
+    #욕설
+    bad1 = message_content.find("씨발")
+    bad1 = bad1 + message_content.find("닥쳐")
+    bad1 = bad1 + message_content.find("꺼져")
+    bad1 = bad1 + message_content.find("지랄")
+    bad1 = bad1 + message_content.find("시발")
+    bad1 = bad1 + message_content.find("쌔끼")
+    bad1 = bad1 + message_content.find("병신")
+    bad1 = bad1 + message_content.find("샤발")
+    bad1 = bad1 + message_content.find("씨 발")
+    bad1 = bad1 + message_content.find("닥ㅊ")
+    bad1 = bad1 + message_content.find("병 신")
+    bad1 = bad1 + message_content.find("*발")
+    bad1 = bad1 + message_content.find("*신")
+    bad1 = bad1 + message_content.find("야발")
+    bad1 = bad1 + message_content.find("새끼")
+    bad1 = bad1 + message_content.find("빠큐")
+    bad1 = bad1 + message_content.find("븅신")
+    bad1 = bad1 + message_content.find("미친")
+    bad1 = bad1 + message_content.find("시놈발")
+    bad1 = bad1 + message_content.find("시이발")
+    bad1 = bad1 + message_content.find("개세끼")
+    bad1 = bad1 + message_content.find("게세끼")
+    bad1 = bad1 + message_content.find("TLQKF")
+    bad1 = bad1 + message_content.find("ㅈ랄")
+    bad1 = bad1 + message_content.find("씌발")
+    bad1 = bad1 + message_content.find("씹발")
+    bad1 = bad1 + message_content.find("씌발")
+    bad1 = bad1 + message_content.find("씹창")
+    bad1 = bad1 + message_content.find("시이이벌")
+    bad1 = bad1 + message_content.find("뒤져")
+    bad1 = bad1 + message_content.find("존나")
+    bad1 = bad1 + message_content.find("싯팔")
+    bad1 = bad1 + message_content.find("ㅣ발")
+    bad1 = bad1 - message_content.find("시발점")
+
+    #폐드립
+    bad2 = message_content.find("ㄴㄱㅁ")
+    bad2 = bad2 + message_content.find("느금마")
+    bad2 = bad2 + message_content.find("니 엄마")
+    bad2 = bad2 + message_content.find("느그 어머니")
+    bad2 = bad2 + message_content.find("싸발")
+    bad2 = bad2 + message_content.find("폐륜")
+    bad2 = bad2 + message_content.find("느그어미")
     
+    #섹드립
+    bad3 = message_content.find("좇")
+    bad3 = bad3 + message_content.find("좆")
+    bad3 = bad3 + message_content.find("섹스")
+    bad3 = bad3 + message_content.find("보지")
+    bad3 = bad3 + message_content.find("섹 스")
+    bad3 = bad3 + message_content.find("조까")
+    bad3 = bad3 + message_content.find("porn")
+    bad3 = bad3 + message_content.find("자지")
+    bad3 = bad3 + message_content.find("불알")
+    bad3 = bad3 + message_content.find("ㅈ같")
+    bad3 = bad3 + message_content.find("기모찌")
+    bad3 = bad3 + message_content.find("자위")
+    bad3 = bad3 + message_content.find("딸딸이")
+    bad3 = bad3 + message_content.find("SEX")
+    bad3 = bad3 + message_content.find("Sex")
+    bad3 = bad3 + message_content.find("섹슥")
+    bad3 = bad3 + message_content.find("포르노")
+    bad3 = bad3 - message_content.find("자위대")
+    bad3 = bad3 - message_content.find("자지말")
+    bad3 = bad3 - message_content.find("자지마")
+    bad3 = bad3 - message_content.find("보지마")
     
-    if bad >= -78 :
+    #외국어 욕설
+    bad4 = message_content.find("fuck")
+    bad4 = bad4 + message_content.find("Tlqkf")
+    bad4 = bad4 + message_content.find("tlqkf")
+    bad4 = bad4 + message_content.find("쉣")
+    bad4 = bad4 + message_content.find("퍽큐")
+    bad4 = bad4 + message_content.find("FUCK")
+    bad4 = bad4 + message_content.find("Fuck")
+    bad4 = bad4 + message_content.find("sibar")
+    bad4 = bad4 + message_content.find("Sibar")
+    bad4 = bad4 + message_content.find("SIBAR")
+    bad4 = bad4 + message_content.find("ファック")
+    bad4 = bad4 + message_content.find("他妈的")
+
+    #비하발언
+    bad5 = message_content.find("따까리")
+    bad5 = bad5 + message_content.find("찐따")
+    bad5 = bad5 + message_content.find("미친놈")
+    bad5 = bad5 + message_content.find("싸가지")
+
+    #초성 욕설 bad 12개
+    #욕설 bad1 34개
+    #폐드립 bad2 6개
+    #섹드립 bad3 20개
+    #외국어 욕설 bad4 11개
+    #비하발언 bad5 3개
+
+    if bad >= 12 :
+        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 초성 포함]")
+        await message.delete() 
+        await asyncio.sleep(7)
+        await a.delete()
+    await bot.process_commands(messsage)
+
+    if bad1 >= 34 :
         a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 언어 포함]")
         await message.delete() 
         await asyncio.sleep(7)
         await a.delete()
     await bot.process_commands(messsage)
+
+    if bad2 >= 6 :
+        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부모욕 포함]")
+        await message.delete() 
+        await asyncio.sleep(7)
+        await a.delete()
+    await bot.process_commands(messsage)
+
+    if bad3 >= 20 :
+        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 성적발언 포함]")
+        await message.delete() 
+        await asyncio.sleep(7)
+        await a.delete()
+    await bot.process_commands(messsage)
+
+    if bad4 >= 11 :
+        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 외국어 포함]")
+        await message.delete() 
+        await asyncio.sleep(7)
+        await a.delete()
+    await bot.process_commands(messsage)
+
+    if bad5 >= 3 :
+        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 비하발언 포함]")
+        await message.delete() 
+        await asyncio.sleep(7)
+        await a.delete()
+    await bot.process_commands(messsage)
+    
 '''
 @bot.command()
 async def button(ctx):
