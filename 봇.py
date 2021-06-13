@@ -239,16 +239,16 @@ async def on_message(message):
         randomNum = random.randrange(1, 7) # 1~6까지 랜덤수
         print(randomNum)
         if randomNum == 1:
-            await client.message.channel.send("1")
+            await message.channel.send("1")
         if randomNum == 2:
-            await client.message.channel.send("2")
+            await message.channel.send("2")
         if randomNum ==3:
-            await client.message.channel.send("3")
+            await message.channel.send("3")
         if randomNum ==4:
-            await client.message.channel.send("4")
+            await message.channel.send("4")
         if randomNum ==5:
-            await client.message.channel.send("5")
+            await message.channel.send("5")
         if randomNum ==6:
-            await client.message.channel.send("6")
+            await message.channel.send("6")
     
 client.run(access_token)
