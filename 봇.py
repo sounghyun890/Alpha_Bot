@@ -138,7 +138,7 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     bad1 = bad1 + message_content.find("ㅣ발")
     bad1 = bad1 + message_content.find("시발점")
     
-    if bad1 >= -34 :
+    if bad1 >= -35 :
         a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 언어 포함]")
         await message.delete() 
         await asyncio.sleep(7)
