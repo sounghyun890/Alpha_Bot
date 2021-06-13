@@ -2,9 +2,8 @@ import asyncio
 import discord,os
 import datetime
 
-
 client = discord.Client()
-    
+access_token = os.environ["token"]
     
 @client.event
 async def on_ready():
@@ -198,5 +197,4 @@ async def button(ctx):
     await e.start()
 '''
 
-access_token = os.environ["token"]
 client.run(access_token)
