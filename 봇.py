@@ -129,7 +129,7 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     bad1 = bad1 + message_content.find("존나")
     bad1 = bad1 + message_content.find("싯팔")
     bad1 = bad1 + message_content.find("ㅣ발")
-    bad1 = bad1 - message_content.find("시발점")
+    bad1 = bad1 + message_content.find("시발점")
 
     #폐드립
     bad2 = message_content.find("ㄴㄱㅁ")
@@ -232,15 +232,5 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
         await a.delete()
     await bot.process_commands(messsage)
     
-'''
-@bot.command()
-async def button(ctx):
-    embeds = [discord.Embed(title="1 page"), discord.Embed(title="2 page"), discord.Embed(title="3 page"), discord.Embed(title="4 page"), discord.Embed(title="5 page")]
-    e = Paginator(bot=bot,
-                  ctx=ctx,
-                  embeds=embeds,
-                  only=ctx.author)
-    await e.start()
-'''
 
 client.run(access_token)
