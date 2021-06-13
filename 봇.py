@@ -3,6 +3,7 @@ import asyncio
 import os
 import datetime
 
+# 개발 및 도움 : Pines, Tanat
 
 client = discord.Client()
 access_token = os.environ["BOT_TOKEN"]
@@ -13,7 +14,7 @@ async def on_ready():
     game = discord.Game("시작하는 중...")
     await client.change_presence(status=discord.Status.online, activity=game)
     while True:
-        game = discord.Game("서버 관리")#상태 메세지
+        game = discord.Game("서버 관리") #상태 메세지
         await client.change_presence(status=discord.Status.online, activity=game)
         await asyncio.sleep(2)
         
@@ -25,7 +26,6 @@ async def on_message(message):
 
     # a = a - message_content.find("알파야 ㅇㅇ")
     # 질문 추가시 위 형식으로 밑에 추가후
-    # if a>=X : <--- X자리에 숫자 추가한 질문수만큼 숫자 늘리기
     
     message_content = message.content
     a = message_content.find("알파야")
@@ -67,7 +67,7 @@ async def on_message(message):
         channel = message.channel
         await channel.send('뭐하고 놀까요?')
 
-    if a>=7 :
+    if a>=7 : # a>=X <--- X자리에 숫자 추가한 질문수만큼 숫자 늘리기
         channel = message.channel
         await channel.send('네?')
         
