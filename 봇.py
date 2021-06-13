@@ -100,7 +100,7 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
         await message.delete() 
         await asyncio.sleep(7)
         await a.delete()
-    await bot.process_commands(messsage)
+
 
     #욕설
     bad1 = message_content.find("씨발")
@@ -143,7 +143,7 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
         await message.delete() 
         await asyncio.sleep(7)
         await a.delete()
-    await bot.process_commands(messsage)
+
 
     #폐드립
     bad2 = message_content.find("ㄴㄱㅁ")
@@ -159,7 +159,7 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
         await message.delete() 
         await asyncio.sleep(7)
         await a.delete()
-    await bot.process_commands(messsage)
+
     
     #섹드립
     bad3 = message_content.find("좇")
@@ -189,7 +189,6 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
         await message.delete() 
         await asyncio.sleep(7)
         await a.delete()
-    await bot.process_commands(messsage)
     
     #외국어 욕설
     bad4 = message_content.find("fuck")
@@ -210,7 +209,7 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
         await message.delete() 
         await asyncio.sleep(7)
         await a.delete()
-    await bot.process_commands(messsage)
+
 
     #비하발언
     bad5 = message_content.find("따까리")
