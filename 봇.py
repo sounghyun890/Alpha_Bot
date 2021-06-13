@@ -2,6 +2,7 @@ import asyncio
 import discord,os
 import datetime
 import random
+from selenium import webdriver
 
 client = discord.Client()
 access_token = os.environ["BOT_TOKEN"]
