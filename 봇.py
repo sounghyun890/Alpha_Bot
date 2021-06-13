@@ -239,16 +239,16 @@ async def on_message(message):
         randomNum = random.randrange(1, 7) # 1~6까지 랜덤수
         print(randomNum)
         if randomNum == 1:
-            await client.send_message(message.channel, embed=discord.Embed(description=':game_die: '+ ':one:'))
+            await client.message.channel.send("1")
         if randomNum == 2:
-            await client.send_message(message.channel, embed=discord.Embed(description=':game_die: ' + ':two:'))
+            await client.message.channel.send("2")
         if randomNum ==3:
-            await client.send_message(message.channel, embed=discord.Embed(description=':game_die: ' + ':three:'))
+            await client.message.channel.send("3")
         if randomNum ==4:
-            await client.send_message(message.channel, embed=discord.Embed(description=':game_die: ' + ':four:'))
+            await client.message.channel.send("4")
         if randomNum ==5:
-            await client.send_message(message.channel, embed=discord.Embed(description=':game_die: ' + ':five:'))
+            await client.message.channel.send("5")
         if randomNum ==6:
-            await client.send_message(message.channel, embed=discord.Embed(description=':game_die: ' + ':six: '))
+            await client.message.channel.send("6")
     
 client.run(access_token)
