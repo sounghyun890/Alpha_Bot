@@ -139,7 +139,7 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     bad1 = bad1 + message_content.find("시발점")
     
     if bad1 >= -33 :
-        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 언어 포함]")
+        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유: 포함]")
         await message.delete() 
         await asyncio.sleep(7)
         await a.delete()
@@ -185,7 +185,7 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     bad3 = bad3 - message_content.find("보지마")
     
     if bad3 >= -12 :
-        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 성적발언 포함]")
+        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:성적발언 포함]")
         await message.delete() 
         await asyncio.sleep(7)
         await a.delete()
@@ -205,7 +205,7 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     bad4 = bad4 + message_content.find("他妈的")
     
     if bad4 >= -11 :
-        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 외국어 포함]")
+        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:외국어욕 포함]")
         await message.delete() 
         await asyncio.sleep(7)
         await a.delete()
@@ -218,7 +218,7 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     bad5 = bad5 + message_content.find("싸가지")
     
     if bad5 >= -3 :
-        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 비하발언 포함]")
+        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:비하발언 포함]")
         await message.delete() 
         await asyncio.sleep(7)
         await a.delete()
