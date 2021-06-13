@@ -231,5 +231,5 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     #섹드립 bad3 20개
     #외국어 욕설 bad4 11개
     #비하발언 bad5 3개
-    +
+    
 client.run(access_token)
