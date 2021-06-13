@@ -94,6 +94,13 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     bad = bad + message_content.find("ㄷ ㅊ")
     bad = bad + message_content.find("ㄲㅈ")
     bad = bad + message_content.find("ㅗ")
+    
+    if bad >= -12 :
+        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 초성 포함]")
+        await message.delete() 
+        await asyncio.sleep(7)
+        await a.delete()
+    await bot.process_commands(messsage)
 
     #욕설
     bad1 = message_content.find("씨발")
@@ -130,6 +137,13 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     bad1 = bad1 + message_content.find("싯팔")
     bad1 = bad1 + message_content.find("ㅣ발")
     bad1 = bad1 + message_content.find("시발점")
+    
+    if bad1 >= -34 :
+        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 언어 포함]")
+        await message.delete() 
+        await asyncio.sleep(7)
+        await a.delete()
+    await bot.process_commands(messsage)
 
     #폐드립
     bad2 = message_content.find("ㄴㄱㅁ")
@@ -139,6 +153,13 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     bad2 = bad2 + message_content.find("싸발")
     bad2 = bad2 + message_content.find("폐륜")
     bad2 = bad2 + message_content.find("느그어미")
+    
+    if bad2 >= -6 :
+        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부모욕 포함]")
+        await message.delete() 
+        await asyncio.sleep(7)
+        await a.delete()
+    await bot.process_commands(messsage)
     
     #섹드립
     bad3 = message_content.find("좇")
@@ -163,6 +184,13 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     bad3 = bad3 - message_content.find("자지마")
     bad3 = bad3 - message_content.find("보지마")
     
+    if bad3 >= -20 :
+        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 성적발언 포함]")
+        await message.delete() 
+        await asyncio.sleep(7)
+        await a.delete()
+    await bot.process_commands(messsage)
+    
     #외국어 욕설
     bad4 = message_content.find("fuck")
     bad4 = bad4 + message_content.find("Tlqkf")
@@ -176,48 +204,7 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     bad4 = bad4 + message_content.find("SIBAR")
     bad4 = bad4 + message_content.find("ファック")
     bad4 = bad4 + message_content.find("他妈的")
-
-    #비하발언
-    bad5 = message_content.find("따까리")
-    bad5 = bad5 + message_content.find("찐따")
-    bad5 = bad5 + message_content.find("미친놈")
-    bad5 = bad5 + message_content.find("싸가지")
-
-    #초성 욕설 bad 12개
-    #욕설 bad1 34개
-    #폐드립 bad2 6개
-    #섹드립 bad3 20개
-    #외국어 욕설 bad4 11개
-    #비하발언 bad5 3개
-
-    if bad >= -12 :
-        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 초성 포함]")
-        await message.delete() 
-        await asyncio.sleep(7)
-        await a.delete()
-    await bot.process_commands(messsage)
-
-    if bad1 >= -34 :
-        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 언어 포함]")
-        await message.delete() 
-        await asyncio.sleep(7)
-        await a.delete()
-    await bot.process_commands(messsage)
-
-    if bad2 >= -6 :
-        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부모욕 포함]")
-        await message.delete() 
-        await asyncio.sleep(7)
-        await a.delete()
-    await bot.process_commands(messsage)
-
-    if bad3 >= -20 :
-        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 성적발언 포함]")
-        await message.delete() 
-        await asyncio.sleep(7)
-        await a.delete()
-    await bot.process_commands(messsage)
-
+    
     if bad4 >= -11 :
         a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 외국어 포함]")
         await message.delete() 
@@ -225,12 +212,24 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
         await a.delete()
     await bot.process_commands(messsage)
 
+    #비하발언
+    bad5 = message_content.find("따까리")
+    bad5 = bad5 + message_content.find("찐따")
+    bad5 = bad5 + message_content.find("미친놈")
+    bad5 = bad5 + message_content.find("싸가지")
+    
     if bad5 >= -3 :
         a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 비하발언 포함]")
         await message.delete() 
         await asyncio.sleep(7)
         await a.delete()
     await bot.process_commands(messsage)
-    
 
+    #초성 욕설 bad 12개
+    #욕설 bad1 34개
+    #폐드립 bad2 6개
+    #섹드립 bad3 20개
+    #외국어 욕설 bad4 11개
+    #비하발언 bad5 3개
+    +
 client.run(access_token)
