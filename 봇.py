@@ -1,10 +1,10 @@
 import asyncio
 import discord,os
 import datetime
-import random
+
 
 client = discord.Client()
-access_token = os.environ["BOT_TOKEN"]
+    
     
 @client.event
 async def on_ready():
@@ -30,6 +30,28 @@ async def on_ready():
         
 now = datetime.datetime.now()
 time = f"{str(now.year)}년 {str(now.month)}월 {str(now.day)}일 {str(now.hour)}시 {str(now.minute)}분"
+@client.event
+async def on_message_delete(message):#메세지가 삭제 되면
+    chennalID=849536197273059338
+    if message.author.bot:return
+    if message.guild.id ==653083797763522580:return
+    if message.channel.id ==850316721989877780:return
+
+    if message.guild.id == 852772557911228428 :
+        chennalID=853509254606225418
+
+    if message.guild.id == 842652067763453964 :
+        chennalID=853509288109539368
+        
+    if message.guild.id == 842652067763453964 :
+        chennalID=853509428970782780
+
+    channel = client.get_channel(chennalID)
+    embed = discord.Embed(title=f"삭제됨", description=f"유저 : {message.author.display_name} \n유저ID : {message.author} \n서버 : {message.guild.name} \n채널 : {message.channel.mention}", color=0xFF0000)
+    embed.add_field(name="삭제된 내용", value=f"내용 : {message.content}", inline=False)
+    embed.set_footer(text=f"TNS 봇 | {time}")
+    await channel.send(embed=embed)
+
 
 @client.event    
 async def on_message_edit(before, after):#메세지 수정 되면(작동 안함)
@@ -40,14 +62,17 @@ async def on_message_edit(before, after):#메세지 수정 되면(작동 안함)
     embed.add_field(name="수정 후 내용", value=after.content, inline=True)
     embed.set_footer(text=f"{before.guild.name} | {time}")
     await channel.send(embed=embed)
+
 # 봇이 새로운 메시지를 수신했을때 동작되는 코드입니다.
 @client.event
 async def on_message(message):
     if message.author.bot:
         return None
    
+
     id = message.author.id
     channel = message.channel
+
     if message.content == "!도움":
         embed = discord.Embed(title = "TNS 봇의 도움말", description = '''
         욕 검열 봇입니다
@@ -57,12 +82,14 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
 봇 로그 보러가기 https://discord.gg/hFryJ4zYyw''', color = 0x08FFFA)
         await message.author.send(embed = embed)
         await message.delete()
+
+    if message.channel.id ==850316721989877780:return
     if message.author.bot:
     
         await message.author.send(embed = embed) # message.channel.send를 message.author.send로
     message_content = message.content
     
-    #초성 욕설
+    #초성
     bad = message_content.find("ㅅㅂ")
     bad = bad + message_content.find("ㅂㅅ")
     bad = bad + message_content.find("ㅄ")
@@ -82,6 +109,8 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
         await message.delete() 
         await asyncio.sleep(7)
         await a.delete()
+
+
     #욕설
     bad1 = message_content.find("씨발")
     bad1 = bad1 + message_content.find("닥쳐")
@@ -124,6 +153,8 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
         await message.delete() 
         await asyncio.sleep(7)
         await a.delete()
+
+
     #폐드립
     bad2 = message_content.find("ㄴㄱㅁ")
     bad2 = bad2 + message_content.find("느금마")
@@ -138,6 +169,7 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
         await message.delete() 
         await asyncio.sleep(7)
         await a.delete()
+
     
     #섹드립
     bad3 = message_content.find("좇")
@@ -187,6 +219,8 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
         await message.delete() 
         await asyncio.sleep(7)
         await a.delete()
+
+
     #비하발언
     bad5 = message_content.find("따까리")
     bad5 = bad5 + message_content.find("찐따")
@@ -199,28 +233,6 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
         await asyncio.sleep(7)
         await a.delete()
     await bot.process_commands(messsage)
-    #초성 욕설 bad 12개
-    #욕설 bad1 34개
-    #폐드립 bad2 6개
-    #섹드립 bad3 20개
-    #외국어 욕설 bad4 11개
-    #비하발언 bad5 3개
-@client.event  
-async def on_message(message):
-     if message.content.startswith('!주사위'):
-        randomNum = random.randrange(1, 7) # 1~6까지 랜덤수
-        print(randomNum)
-        if randomNum == 1:
-            await message.channel.send("1")
-        if randomNum == 2:
-            await message.channel.send("2")
-        if randomNum ==3:
-            await message.channel.send("3")
-        if randomNum ==4:
-            await message.channel.send("4")
-        if randomNum ==5:
-            await message.channel.send("5")
-        if randomNum ==6:
-            await message.channel.send("6")
 
+access_token = os.environ["token"]
 client.run(access_token)
