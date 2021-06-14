@@ -250,5 +250,5 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     else:
         await message.channel.send(embed=discord.Embed(title="권한 부족", description = message.author.mention + "님은 유저를 킥할 수 있는 권한이 없습니다.", color = 0xff0000))
         return
-access_token = os.environ["BOT_TOKEN"]
+access_token = os.environ["token"]
 client.run(access_token)
