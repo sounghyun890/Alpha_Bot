@@ -34,18 +34,6 @@ time = f"{str(now.year)}년 {str(now.month)}월 {str(now.day)}일 {str(now.hour)
 async def on_message_delete(message):#메세지가 삭제 되면
     chennalID=849536197273059338
     if message.author.bot:return
-    if message.guild.id ==653083797763522580:return
-    if message.channel.id ==850316721989877780:return
-    if message.channel.id ==842673635478339625:return
-
-    if message.guild.id == 852772557911228428 :
-        chennalID=853509254606225418
-
-    if message.guild.id == 842652067763453964 :
-        chennalID=853509288109539368
-        
-    if message.guild.id == 764348395510431755 :
-        chennalID=853509428970782780
 
     channel = client.get_channel(chennalID)
     embed = discord.Embed(title=f"삭제됨", description=f"유저 : {message.author.display_name} \n유저ID : {message.author} \n서버 : {message.guild.name} \n채널 : {message.channel.mention}", color=0xFF0000)
@@ -84,7 +72,7 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
         await message.author.send(embed = embed)
         await message.delete()
 
-    if message.channel.id ==850316721989877780:return
+    if message.channel.id ==848880164107583490:return
     if message.author.bot:
     
         await message.author.send(embed = embed) # message.channel.send를 message.author.send로
