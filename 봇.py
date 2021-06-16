@@ -5,6 +5,7 @@ import datetime
 
 client = discord.Client()
     
+
     
 @client.event
 async def on_ready():
@@ -12,6 +13,9 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print("===========")
+    guild_list = client.guilds
+    print(guild_list)
+
     
 @client.event
 async def on_ready():
