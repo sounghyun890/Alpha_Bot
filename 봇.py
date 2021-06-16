@@ -36,6 +36,7 @@ async def on_message_delete(message):#메세지가 삭제 되면
     if message.author.bot:return
     if message.guild.id ==653083797763522580:return
     if message.channel.id ==850316721989877780:return
+    if message.channel.id ==842673635478339625:return
 
     if message.guild.id == 852772557911228428 :
         chennalID=853509254606225418
@@ -43,7 +44,7 @@ async def on_message_delete(message):#메세지가 삭제 되면
     if message.guild.id == 842652067763453964 :
         chennalID=853509288109539368
         
-    if message.guild.id == 842652067763453964 :
+    if message.guild.id == 764348395510431755 :
         chennalID=853509428970782780
 
     channel = client.get_channel(chennalID)
@@ -89,6 +90,9 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
         await message.author.send(embed = embed) # message.channel.send를 message.author.send로
     message_content = message.content
     
+    #특수
+  
+    
     #초성
     bad = message_content.find("ㅅㅂ")
     bad = bad + message_content.find("ㅂㅅ")
@@ -102,9 +106,56 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     bad = bad + message_content.find("ㅗ")
     bad = bad + message_content.find("ㄷ ㅊ")
     bad = bad + message_content.find("ㄲㅈ")
-    bad = bad + message_content.find("ㅗ")
-    
-    if bad >= -12 :
+    bad = bad + message_content.find("ㅗ")#12
+    bad = bad + message_content.find("ㅅ2ㅂ")
+    bad = bad + message_content.find("ㅅ3ㅂ")
+    bad = bad + message_content.find("ㅅ4ㅂ")
+    bad = bad + message_content.find("ㅅ5ㅂ")
+    bad = bad + message_content.find("ㅅ6ㅂ")
+    bad = bad + message_content.find("ㅅ7ㅂ")
+    bad = bad + message_content.find("ㅅ8ㅂ")
+    bad = bad + message_content.find("ㅅ9ㅂ")
+    bad = bad + message_content.find("ㅅ#ㅂ")
+    bad = bad + message_content.find("ㅅ$ㅂ")
+    bad = bad + message_content.find("ㅅ%ㅂ")
+    bad = bad + message_content.find("ㅅ^ㅂ")
+    bad = bad + message_content.find("ㅅ&ㅂ")
+    bad = bad + message_content.find("ㅅ*ㅂ")
+    bad = bad + message_content.find("ㅅ~ㅂ")
+    bad = bad + message_content.find("ㅅ1ㅂ")#28
+    bad = bad + message_content.find("ㅅ{ㅂ")
+    bad = bad + message_content.find("ㅅ}ㅂ")
+    bad = bad + message_content.find("ㅅ[ㅂ")
+    bad = bad + message_content.find("ㅅ]ㅂ")
+    bad = bad + message_content.find("ㅅ;ㅂ")
+    bad = bad + message_content.find("ㅅ'ㅂ")
+    bad = bad + message_content.find("ㅅ:ㅂ")
+    bad = bad + message_content.find("ㅅ\ㅂ")
+    bad = bad + message_content.find("ㅅ|ㅂ")
+    bad = bad + message_content.find("ㅅ`ㅂ")
+    bad = bad + message_content.find("ㅅ  ㅂ")
+    bad = bad + message_content.find("씨ㅂ")
+    bad = bad + message_content.find("씨바")
+    bad = bad + message_content.find("ㅅㅣㅂ")
+    bad = bad + message_content.find("ㅅㅣㅂㅏㄹ")
+    bad = bad + message_content.find("ㅆㅣㅂㅏㄹ")#28
+    bad = bad + message_content.find("ㅅ  ㅂ")
+    bad = bad + message_content.find("ㅅ   ㅂ")
+    bad = bad + message_content.find("ㅅ    ㅂ")
+    bad = bad + message_content.find("ㅅ     ㅂ")
+    bad = bad + message_content.find("ㅅ      ㅂ")
+    bad = bad + message_content.find("ㅅ       ㅂ")
+    bad = bad + message_content.find("ㅅ        ㅂ")
+    bad = bad + message_content.find("ㅅ         ㅂ")
+    bad = bad + message_content.find("ㅅ          ㅂ")
+    bad = bad + message_content.find("ㅅ           ㅂ")
+    bad = bad + message_content.find("ㅅ            ㅂ")
+    bad = bad + message_content.find("ㅅ             ㅂ")
+    bad = bad + message_content.find("ㅅ              ㅂ")#
+
+
+
+    if bad >= -57 :
         a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 초성 포함]")
         await message.delete() 
         await asyncio.sleep(7)
@@ -146,9 +197,58 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     bad1 = bad1 + message_content.find("싯팔")
     bad1 = bad1 + message_content.find("ㅣ발")
     bad1 = bad1 + message_content.find("시발점")
-    bad1 = bad1 + message_content.find("TLqkf")
+    bad1 = bad1 + message_content.find("씨2발")#34
+    bad1 = bad1 + message_content.find("씨3발")
+    bad1 = bad1 + message_content.find("씨4발")
+    bad1 = bad1 + message_content.find("씨5발")
+    bad1 = bad1 + message_content.find("씨6발")
+    bad1 = bad1 + message_content.find("씨7발")
+    bad1 = bad1 + message_content.find("씨8발")
+    bad1 = bad1 + message_content.find("씨9발")
+    bad1 = bad1 + message_content.find("씨#발")
+    bad1 = bad1 + message_content.find("씨$발")
+    bad1 = bad1 + message_content.find("씨%발")
+    bad1 = bad1 + message_content.find("씨^발")
+    bad1 = bad1 + message_content.find("씨&발")
+    bad1 = bad1 + message_content.find("씨*발")
+    bad1 = bad1 + message_content.find("씨~발")#48
+    bad1 = bad1 + message_content.find("시2발")
+    bad1 = bad1 + message_content.find("시3발")
+    bad1 = bad1 + message_content.find("시4발")
+    bad1 = bad1 + message_content.find("시5발")
+    bad1 = bad1 + message_content.find("시6발")
+    bad1 = bad1 + message_content.find("시7발")
+    bad1 = bad1 + message_content.find("시8발")
+    bad1 = bad1 + message_content.find("시9발")
+    bad1 = bad1 + message_content.find("시#발")
+    bad1 = bad1 + message_content.find("시$발")
+    bad1 = bad1 + message_content.find("시%발")
+    bad1 = bad1 + message_content.find("시^발")
+    bad1 = bad1 + message_content.find("시&발")
+    bad1 = bad1 + message_content.find("시*발")
+    bad1 = bad1 + message_content.find("시~발")
+    bad1 = bad1 + message_content.find("시1발")#64
+    bad1 = bad1 + message_content.find("껒")
+    bad1 = bad1 + message_content.find("꺼ㅈ")
+    bad1 = bad1 + message_content.find("비융신")
+    bad1 = bad1 + message_content.find("씨  발")
+    bad1 = bad1 + message_content.find("시   발")
+    bad1 = bad1 + message_content.find("시    발")
+    bad1 = bad1 + message_content.find("시     발")
+    bad1 = bad1 + message_content.find("시      발")
+    bad1 = bad1 + message_content.find("시       발")
+    bad1 = bad1 + message_content.find("시        발")
+    bad1 = bad1 + message_content.find("시         발")
+    bad1 = bad1 + message_content.find("시          발")
+    bad1 = bad1 + message_content.find("시           발")
+    bad1 = bad1 + message_content.find("시            발")
+    bad1 = bad1 + message_content.find("시             발")
+    bad1 = bad1 + message_content.find("시              발")#80
     
-    if bad1 >= -34 :
+    
+    
+    
+    if bad1 >= -80 :
         a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:욕설 포함]")
         await message.delete() 
         await asyncio.sleep(7)
@@ -162,9 +262,17 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     bad2 = bad2 + message_content.find("느그 어머니")
     bad2 = bad2 + message_content.find("싸발")
     bad2 = bad2 + message_content.find("폐륜")
-    bad2 = bad2 + message_content.find("느그어미")
+    bad2 = bad2 + message_content.find("느그어미")#6
+    bad2 = bad2 + message_content.find("ㄴㄱ마")
+    bad2 = bad2 + message_content.find("느금ㅁ")
+    bad2 = bad2 + message_content.find("니 애미")
+    bad2 = bad2 + message_content.find("니애미")
+    bad2 = bad2 + message_content.find("니@ㅐ미")
+
     
-    if bad2 >= -6 :
+    
+    
+    if bad2 >= -11 :
         a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:부모욕 포함]")
         await message.delete() 
         await asyncio.sleep(7)
@@ -189,12 +297,13 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     bad3 = bad3 + message_content.find("Sex")
     bad3 = bad3 + message_content.find("섹슥")
     bad3 = bad3 + message_content.find("포르노")
-    bad3 = bad3 - message_content.find("자위대")
-    bad3 = bad3 - message_content.find("자지말")
+    bad3 = bad3 + message_content.find("질내사정")
+    bad3 = bad3 + message_content.find("hentai")
+    bad3 = bad3 - message_content.find("HENTAI")
     bad3 = bad3 - message_content.find("자지마")
-    bad3 = bad3 - message_content.find("보지마")
+    bad3 = bad3 - message_content.find("보지마")#15
     
-    if bad3 >= -12 :
+    if bad3 >= -15 :
         a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:성적발언 포함]")
         await message.delete() 
         await asyncio.sleep(7)
@@ -212,7 +321,7 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     bad4 = bad4 + message_content.find("Sibar")
     bad4 = bad4 + message_content.find("SIBAR")
     bad4 = bad4 + message_content.find("ファック")
-    bad4 = bad4 + message_content.find("他妈的")
+    bad4 = bad4 + message_content.find("他妈的")#11
     
     if bad4 >= -11 :
         a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:외국어욕 포함]")
@@ -225,7 +334,7 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     bad5 = message_content.find("따까리")
     bad5 = bad5 + message_content.find("찐따")
     bad5 = bad5 + message_content.find("미친놈")
-    bad5 = bad5 + message_content.find("싸가지")
+    bad5 = bad5 + message_content.find("싸가지")#3
     
     if bad5 >= -3 :
         a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:비하발언 포함]")
@@ -234,22 +343,6 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
         await a.delete()
     await bot.process_commands(messsage)
     
-    if(message.content.split(" ")[0] == "!킥"):
-    if(message.author.guild_permissions.kick_members):
-        try:
-            user = message.guild.get_member(int(message.content.split(' ')[1][3:21]))
-            reason = message.content[25:]
-            if(len(message.content.split(" ")) == 2):
-                reason = "None"
-            await user.send(embed=discord.Embed(title="킥", description = f'당신은 {message.guild.name} 서버에서 킥당했습니다. 사유는 다음과 같습니다. {reason}', color = 0xff0000))
-            await user.kick(reason=reason)
-            await message.channel.send(embed=discord.Embed(title="킥 성공", description = f"{message.author.mention} 님은 해당 서버에서 킥당하셨습니다. 사유:{reason}", color = 0x00ff00))
-        except Exception as e:
-            await message.channel.send(embed=discord.Embed(title="에러 발생", description = str(e), color = 0xff0000))
-            return
-    else:
-        await message.channel.send(embed=discord.Embed(title="권한 부족", description = message.author.mention + "님은 유저를 킥할 수 있는 권한이 없습니다.", color = 0xff0000))
-        return
     
 access_token = os.environ["token"]
 client.run(access_token)
