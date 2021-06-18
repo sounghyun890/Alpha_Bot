@@ -85,7 +85,7 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
         await message.author.send(embed = embed)
         await message.delete()
 
-    if message.channel.id ==850316721989877780:return
+    if message.channel.id ==848880164107583490:return
     if message.author.bot:
     
         await message.author.send(embed = embed) # message.channel.send를 message.author.send로
