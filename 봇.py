@@ -369,6 +369,14 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
         await asyncio.sleep(7)
         await a.delete()
     await bot.process_commands(messsage)
+
+    bad테스트 = message_content.find("가나","다라")
+    if bad테스트 >=0
+        a = await message.channel.send(message.author.mention+"님의 메세지가 삭제 되었습니다.\n[사유:테스트 포함]")
+        await message.delete() 
+        await asyncio.sleep(7)
+        await a.delete()
+    await bot.process_commands(messsage)
     
     
 access_token = os.environ["token"]
