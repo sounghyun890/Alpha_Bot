@@ -6,7 +6,26 @@ import random
 
 client = discord.Client()
     
-    
+
+@client.event
+async def on_message(message):
+    if(message.content.split(" ")[0] == "!킥"):
+        if(message.author.guild_permissions.kick_members):
+            try:
+                user = message.guild.get_member(int(message.content.split(' ')[1][3:21]))
+                reason = message.content[25:]
+                if(len(message.content.split(" ")) == 2):
+                    reason = "None"
+                await user.send(embed=discord.Embed(title="킥", description = f'당신은 {message.guild.name} 서버에서 킥당했습니다. 사유는 다음과 같습니다. {reason}', color = 0xff0000))
+                await user.kick(reason=reason)
+                await message.channel.send(embed=discord.Embed(title="킥 성공", description = f"{message.author.mention} 님은 해당 서버에서 킥당하셨습니다. 사유:{reason}", color = 0x00ff00))
+            except Exception as e:
+                await message.channel.send(embed=discord.Embed(title="에러 발생", description = str(e), color = 0xff0000))
+                return
+        else:
+            await message.channel.send(embed=discord.Embed(title="권한 부족", description = message.author.mention + "님은 유저를 킥할 수 있는 권한이 없습니다.", color = 0xff0000))
+            return    
+
 @client.event
 async def on_ready():
     print("로그인 된 봇:") #화면에 봇의 아이디, 닉네임이 출력되는 코드
