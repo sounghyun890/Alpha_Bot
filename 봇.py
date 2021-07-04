@@ -51,9 +51,7 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
 봇 로그 보러가기 https://discord.gg/hFryJ4zYyw''', color = 0x08FFFA)
         await message.author.send(embed = embed)
         await message.delete()
-    tns = message.content.find("TNS")
-    if tns == 0:
-        await message.chaanel.send("저를 부르셨나요? /n좋은 일로 부르신거면 좋겠어요")
+  
     if message.channel.id == 850316721989877780:return
     if message.channel.id == 851016540714172426:return
     if message.guild.id == 849536031283478599 :
@@ -706,7 +704,11 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
 
             else:
                 await message.channel.send("올바른 값을 입력해주세요.")
+    
 
+    tns = message.content.find("TNS")
+    if tns == 0:
+        await message_channel.send("저를 부르셨나요? /n좋은 일로 부르신거면 좋겠어요")
 @client.event
 async def on_message_delete(message):
     if message.guild.id == 653083797763522580 : return
