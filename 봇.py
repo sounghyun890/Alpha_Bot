@@ -706,9 +706,18 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
                 await message.channel.send("올바른 값을 입력해주세요.")
     
 
-    tns = message_content.find("TNS")
-    if tns == 0:
-        await message.channel.send("저를 부르셨나요? \n좋은 일로 부르신거면 좋겠어요")
+        
+    if message.content == 씨    
+        try:
+	        msg = await client.wait_for('발', timeout=60.0, check=check)
+        except asyncio.TimeoutError:
+	        
+        else:
+	        await message.delete() 
+            a = await message.channel.send(message.author.display_name+"님의 메세지가 삭제 되었습니다.\n[사유:비하발언 포함]")
+            await asyncio.sleep(7)
+            await a.delete()
+        
 @client.event
 async def on_message_delete(message):
     if message.guild.id == 653083797763522580 : return
