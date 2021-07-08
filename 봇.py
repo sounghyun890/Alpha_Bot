@@ -707,7 +707,7 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     
 
         
-    if message.content == 씨    
+    if message.content == 씨 :
         try:
 	        msg = await client.wait_for('발', timeout=60.0, check=check)
         except asyncio.TimeoutError:
