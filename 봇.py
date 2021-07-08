@@ -706,8 +706,9 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
                 await message.channel.send("올바른 값을 입력해주세요.")
     
 
-        
-    if message.content == 씨 :
+    def check(m):
+	return m.channel.id == message.channel.id and m.author == message.author
+    if message.content == "씨" :
         try:
 	        msg = await client.wait_for('발', timeout=60.0, check=check)
         except asyncio.TimeoutError:
