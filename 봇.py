@@ -63,15 +63,11 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     if message.content == "씨":
         def check(m):
             return m.author == message.author and m.channel == message.channe
-	try:
-            msg = await client.wait_for("message", check=check, timeout=30)
-            if msg.content == "발":
-		await message.delete()
-                await message.channel.send("안녕하세요")
-            
-            if msg.content == "빨":
-		await message.delete()
-                await message.channel.send("반갑습니다")
+        msg = await client.wait_for("발", check=check, timeout=30)
+        if msg.content == "발":
+    	    await message.delete()
+            await message.channel.send("안녕하세요")
+
 
 
     #초성
