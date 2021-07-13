@@ -10,7 +10,13 @@ token = "token"
 
 @client.event
 async def on_ready():
-    print("--- ready ---")
+    print(f"[!] 다음으로 로그인에 성공했습니다.")
+    print(f"[!] 다음 : {client.user.name}")
+    print(f"[!] 다음 : {client.user.id}")
+    guild_list = client.guilds
+    for i in guild_list:
+        print("서버 ID: {} / 서버 이름: {}".format(i.id, i.name))
+    print(f"[!] 총 서버 수: {len(client.guilds)}")
 
 
 @client.event
@@ -27,4 +33,5 @@ async def on_message(message):
         
         
         
-client.run(token)
+access_token = os.environ["token"]
+client.run(access_token)
