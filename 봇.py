@@ -1,5 +1,6 @@
 import discord
 import json
+import requests
 
 client = discord.Client()
 token = "token"
