@@ -9,7 +9,7 @@ from discord.utils import get
 import json
 import requests
 
-riot_token = "RGAPI-2aea1cfd-fa8f-4e00-b86b-b8668ad9d749"
+riot_token = "rtoken"
 
 client = discord.Client()
 
