@@ -6,8 +6,10 @@ import datetime
 from discord.ext import tasks
 from itertools import cycle
 from discord.utils import get
+import json
+import requests
 
-
+riot_token = "RGAPI-2aea1cfd-fa8f-4e00-b86b-b8668ad9d749"
 
 client = discord.Client()
 
@@ -60,13 +62,35 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
     message_content = message.content
     
     #특수
-    if message.content == "씨":
-        def check(m):
-            return m.author == message.author and m.channel == message.channe
-        msg = await client.wait_for("발", check=check, timeout=30)
-        if msg.content == "발":
-    	    await message.delete()
-            await message.channel.send("안녕")
+    if message.content.startswith("/검색 "):
+        UserName = message.content.replace("/검색 ", "")
+        UserInfoUrl = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + UserName
+        res = requests.get(UserInfoUrl, headers={"X-Riot-Token":riot_token})
+        resjs = json.loads(res.text)
+
+        if res.status_code == 200:
+            UserIconUrl = "http://ddragon.leagueoflegends.com/cdn/11.3.1/img/profileicon/{}.png"
+            embed = discord.Embed(title=f"{resjs['name']} 님의 플레이어 정보", description=f"**{resjs['summonerLevel']} LEVEL**", color=0xFF9900)
+
+            UserInfoUrl_2 = "https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/" + resjs["id"]
+            res_2 = requests.get(UserInfoUrl_2, headers={"X-Riot-Token":riot_token})
+            res_2js = json.loads(res_2.text)
+
+            if res_2js == []: # 언랭크일때
+                embed.add_field(name=f"{resjs['name']} 님은 언랭크입니다.", value="**언랭크 유저의 정보는 출력하지 않습니다.**", inline=False)
+
+            else: # 언랭크가 아닐때
+                for rank in res_2js:
+                    if rank["queueType"] == "RANKED_SOLO_5x5":
+                        embed.add_field(name="솔로랭크", value=f"**티어 : {rank['tier']} {rank['rank']} - {rank['leaguePoints']} LP**\n"
+                                                           f"**승 / 패 : {rank['wins']} 승 {rank['losses']} 패**", inline=True)
+
+                    else:
+                        embed.add_field(name="자유랭크", value=f"**티어 : {rank['tier']} {rank['rank']} - {rank['leaguePoints']} LP**\n"
+                                                            f"**승 / 패 : {rank['wins']} 승 {rank['losses']} 패**", inline=True)
+
+            embed.set_author(name=resjs['name'], url=f"http://fow.kr/find/{UserName.replace(' ', '')}", icon_url=UserIconUrl.format(resjs['profileIconId']))
+            await message.channel.send(embed=embed)
 
 
 
