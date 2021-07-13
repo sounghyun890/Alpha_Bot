@@ -6,7 +6,7 @@ import discord,os
 
 client = discord.Client()
 token = "token"
-riot_token = "rtoken"
+
 
 @client.event
 async def on_ready():
