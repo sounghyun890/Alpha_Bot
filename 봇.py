@@ -66,7 +66,7 @@ TNS봇은 삭제 된 내용을 로그서버로 전송하고 있습니다
         msg = await client.wait_for("발", check=check, timeout=30)
         if msg.content == "발":
     	    await message.delete()
-            await message.channel.send("안녕하세요")
+            await message.channel.send("안녕")
 
 
 
