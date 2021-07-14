@@ -21,15 +21,18 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content.startswith('!hello'):
+    wr1 = message.author.display_name+"님의 메세지가 삭제 되었습니다.\n[사유:부적절한 언어 포함]"
+    if message.content.startswith('씨'):
         channel = message.channel
-        await channel.send('hello라고 말해 주세요')
 
         def check(m):
-            return m.content == 'hello' and m.channel == channel
+            return m.content == '발' and m.channel == channel
 
         msg = await client.wait_for('message', check=check)
-        await channel.send('Hello {.author}!'.format(msg))
+        await message.delete()
+        a = await channel.send(wr.format(msg))
+        await asyncio.sleep(7)
+        await a.delete()
         
         
         
