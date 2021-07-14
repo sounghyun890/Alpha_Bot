@@ -30,7 +30,8 @@ async def on_message(message):
 
         msg = await client.wait_for('message', check=check)
         await message.delete()
-        a = await channel.send(wr.format(msg))
+        await m.delete()
+        a = await channel.send(wr1.format(msg))
         await asyncio.sleep(7)
         await a.delete()
         
