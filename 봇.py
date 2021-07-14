@@ -26,7 +26,7 @@ async def on_message(message):
         channel = message.channel
 
         def check(m):
-            return m.content == '발' and m.channel == channel
+            m = return m.content == '발' and m.channel == channel
 
         msg = await client.wait_for('message', check=check)
         await message.delete()
