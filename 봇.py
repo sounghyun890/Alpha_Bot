@@ -38,7 +38,7 @@ async def on_message(message):
                 reaction, user = await client.wait_for('reaction_add', check=check, timeout=120)
             except asyncio.TimeoutError:
                 break
-            if reaction.emoji == '⏪:
+            if reaction.emoji == '⏪':
                 n = 0
                 await help_msg.edit(embed=helps[n])
             elif reaction.emoji == '⏩':
