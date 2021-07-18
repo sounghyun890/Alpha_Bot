@@ -29,7 +29,7 @@ async def on_message(message):
                  discord.Embed(title='재미기능', description='가위또는 바위 또는 보)\n가위바위보 게임을 해요', color=0x00fffff),
                  discord.Embed(title='봇정보', description='!개발자\n저를 만들어주신분을 알려드려요!\n!건의 (메시지)\n건의를 하고 싶으면 이렇게 쳐주세요!\n!오픈소스**\n제가 쓴 오픈소스를 알려드려요', color=0x00fffff),]
         help_msg = await message.channel.send(embed=helps[n])
-        for i in ['⏪', '◀️', '⏹', ':▶️', '⏩']:
+        for i in ['⏪', '◀️', '⏹', '▶️', '⏩']:
             await help_msg.add_reaction(i)
         def check(reaction, user):
             return user == message.author and reaction.message.channel == message.channel
