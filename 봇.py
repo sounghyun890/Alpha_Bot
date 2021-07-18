@@ -28,11 +28,11 @@ async def on_message(message):
                  discord.Embed(title='명령어', description='!청소 [갯수]\n갯수만큼 메세지 삭제\n그외 업데이트 예정 ', color=0x00fffff),
                  discord.Embed(title='봇정보', description=f'봇생성일:2021.6.16\n이용서버 수: {len(client.guilds)}\n봇 서버\nhttps://discord.gg/hFryJ4zYyw\n하트는 개발자에게 큰 도움이 됩니다\nhttps://koreanbots.dev/bots/848795383751639080', color=0x00fffff),
                  discord.Embed(title='개발자', description='Tanat#5542\n고양이를 좋아하며 봇의 주인이다\nPines#6810\n개발팀원이며 잠수일때가 많다', color=0x00fffff),]
-        help_msg = await message.author.send(embed=helps[n])
+        help_msg = await message.channel.send(embed=helps[n])
         for i in ['⏪', '◀️', '⏹', '▶️', '⏩']:
             await help_msg.add_reaction(i)
         def check(reaction, user):
-            return user == message.author and reaction.message.channel == message.channel
+            return user == message.author
         while True:
             try:
                 reaction, user = await client.wait_for('reaction_add', check=check, timeout=180)
