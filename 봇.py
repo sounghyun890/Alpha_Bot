@@ -32,7 +32,7 @@ async def on_message(message):
         for i in [':rewind:', ':arrow_backward:', ':stop_button:', ':arrow_forward:', ':fast_forward:']:
             await help_msg.add_reaction(i)
         def check(reaction, user):
-    return user == message.author and reaction.message.channel == message.channel
+            return user == message.author and reaction.message.channel == message.channel
         while True:
             try:
                 reaction, user = await client.wait_for('reaction_add', check=check, timeout=120)
