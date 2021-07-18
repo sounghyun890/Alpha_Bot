@@ -20,6 +20,7 @@ async def on_ready():
 
 
 @client.event
+async def on_message(message):
     if message.content == '!도움말' or message.content == '!도움' or message.content == '/help':
         n = 0
         helps = [discord.Embed(title='목차', description='페이지 2\n 관리기능\n페이지 3\n편의기능\n페이지 4\n재미기능\n페이지 5\n봇정보', color=0x00ffff),
