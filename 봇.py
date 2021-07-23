@@ -37,7 +37,7 @@ client = ButtonClient()
 
 @client.event
 async def on_message(msg):
-    if msg.content == '!buttons':
+    if msg.content == '!버튼':
         await msg.channel.send(
             # Buttons can be wrapped in 2-dimensional array
             # Internally, this is implemented using component with type 1.
