@@ -41,7 +41,7 @@ async def change_status():
 async def on_message(message):
     if message.author.bot:return
 
-    text = message
+    text = message.content
     newtext1 = ''.join(char for char in text if char.isalnum())
     newtext2 = re.sub(r'[0-9]+', '', newtext1)
     bad = ["씨발", "병신", "닥쳐"]
