@@ -46,7 +46,7 @@ async def on_message(message):
     newtext2 = re.sub(r'[0-9]+', '', newtext1)
 
     await message.channel.send(newtext2)
-    if newtext2..content.find("씨발") :
+    if newtext2.content.find("씨발") :
         message.delete()
 
    
