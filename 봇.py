@@ -795,7 +795,7 @@ async def on_message(message):
     
     await message.channel.send(newtext2)
     for i in bad:
-        if not i in newtext2:
+        if not i in text:
             for i in bad:
                 if i in newtext2:
                     await message.delete()
