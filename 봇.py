@@ -791,7 +791,7 @@ async def on_message(message):
     text = message.content
     newtext1 = ''.join(char for char in text if char.isalnum())
     newtext2 = re.sub(r'[0-9]+', '', newtext1)
-    bad = ["씨발", "병신", "닥쳐"]
+    bad = ["씨발", "병신", "닥쳐","시발"]
     
     await message.channel.send(newtext2)
     for i in bad:
