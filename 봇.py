@@ -48,10 +48,6 @@ async def on_message(message):
     await message.channel.send(newtext2)
 
 
-출력결과
-가나
-
-
    
     
 
