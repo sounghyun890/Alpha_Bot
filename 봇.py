@@ -40,6 +40,7 @@ async def change_status():
 @client.event
 async def on_message(message):
     if message.author.bot:return
+    message_content = message.content
     
     bad = message_content.find("ㅅㅂ")
     bad = bad + message_content.find("ㅂㅅ")
