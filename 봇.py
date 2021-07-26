@@ -795,11 +795,12 @@ async def on_message(message):
     bad = ["씨발", "병신", "닥쳐","시발"]
     
     await message.channel.send(newtext2)
-    for i in bad:
-        if not i in text:
-            for i in bad:
-                if i in newtext2:
-                    await message.delete()
+    for db in bad:
+        if db in text:
+            return    
+        for bd in bad:
+            if bd in newtext2:
+                await message.delete()
 
    
     
