@@ -798,9 +798,9 @@ async def on_message(message):
     for db in bad:
         if db in text:
             return    
-        for bd in bad:
-            if bd in newtext2:
-                await message.delete()
+    for bd in bad:
+        if bd in newtext2:
+            await message.delete()
 
    
     
