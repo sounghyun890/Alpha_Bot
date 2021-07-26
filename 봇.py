@@ -683,7 +683,20 @@ async def on_message(message):
         await asyncio.sleep(7)
         await a.delete()
         
-        
+    text = message.content
+    newtext1 = ''.join(char for char in text if char.isalnum())
+    newtext2 = re.sub(r'[0-9]+', '', newtext1)
+    bad = ["씨발", "병신", "닥쳐","시발"]
+    
+    await message.channel.send(newtext2)
+    for i in bad:
+        if i in text:
+            await message.delete()
+    for i in bad:
+        if i in newtext2:
+            await message.delete()
+            
+            
     #특수
     if message.content.startswith('씨'):
         channel = message.channel
@@ -789,18 +802,7 @@ async def on_message(message):
             await asyncio.sleep(7)
             await a.delete()
     
-    text = message.content
-    newtext1 = ''.join(char for char in text if char.isalnum())
-    newtext2 = re.sub(r'[0-9]+', '', newtext1)
-    bad = ["씨발", "병신", "닥쳐","시발"]
     
-    await message.channel.send(newtext2)
-    for i in bad:
-        if i in text:
-            await message.delete()
-    for i in bad:
-        if i in newtext2:
-            await message.delete()
 
    
     
