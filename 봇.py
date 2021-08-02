@@ -39,7 +39,7 @@ async def change_status():
 # 봇이 새로운 메시지를 수신했을때 동작되는 코드입니다.
 @client.event
 async def on_message(message):
-    if channel.topic.find("얀녕")
+    if channel.topic.find("얀녕"):
         await message.channel.send("확인")
 
 
